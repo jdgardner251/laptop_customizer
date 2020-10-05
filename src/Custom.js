@@ -1,6 +1,7 @@
 import React from "react";
 import slugify from "slugify";
 import FeatureItem from "./FeatureItem";
+import Feature from "./Feature"
 
 function Custom(props) {
 
@@ -18,13 +19,10 @@ function Custom(props) {
         />;
     });
 
-    return (
-      <fieldset className="feature" key={featureHash}>
-        <legend className="feature__name">
-          <h3>{feature}</h3>
-        </legend>
-        {options}
-      </fieldset>
+    return ( <Feature
+      feature={feature}
+      options={options}
+      featureHash={props.featureHash} />
     );
   });
 

@@ -75,6 +75,7 @@ class App extends Component {
           features={this.props.features} 
           selected={this.state.selected}
           updateFeature={this.updateFeature}
+          featureHash={this.featureHash}
            />
           <section className="main__summary">
             <h2>Your cart</h2>
