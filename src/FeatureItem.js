@@ -11,7 +11,7 @@ function FeatureItem(props) {
         <div key={props.itemHash} className="feature__item">
         <input
           type="radio"
-          id={props.itemHash}
+          id={props.key}
           className="feature__option"
           name={slugify(props.feature)}
           checked={props.item.name === props.selected[props.feature].name}
