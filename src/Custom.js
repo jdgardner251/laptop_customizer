@@ -1,30 +1,19 @@
 import React from "react";
-import slugify from "slugify";
-import FeatureItem from "./FeatureItem";
 import Feature from "./Feature";
+import FEATURES from './store.js';
 
 function Custom(props) {
-  const features = Object.keys(props.features).map((feature, idx) => {
+  
+  const features = Object.keys(FEATURES).map((feature, idx) => {
     const featureHash = feature + "-" + idx;
-    const options = props.features[feature].map((item) => {
-      const itemHash = slugify(JSON.stringify(item));
-
-      return (
-        <FeatureItem
-          key={itemHash}
-          feature={feature}
-          item={item}
-          selected={props.selected}
-          updateFeature={props.updateFeature}
-        />
-      );
-    });
-
+    
     return (
       <Feature
+        key={featureHash}
         feature={feature}
-        options={options}
-        featureHash={props.featureHash}
+        features={FEATURES}
+        selected={props.selected}
+        updateFeature={props.updateFeature}
       />
     );
   });

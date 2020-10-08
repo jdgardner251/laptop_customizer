@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Custom from './Custom';
 
+
 // Normalizes string as a slug - a string that is safe to use
 // in both URLs and html attributes
 
@@ -11,10 +12,7 @@ import Cart from './Cart';
 
 // This object will allow us to
 // easily convert numbers into US dollar values
-const USCurrencyFormat = new Intl.NumberFormat('en-US', {
-  style: 'currency',
-  currency: 'USD'
-});
+
 
 class App extends Component {
   state = {
@@ -53,7 +51,6 @@ class App extends Component {
         <Header />
         <main>
         <Custom 
-          features={this.props.features} 
           selected={this.state.selected}
           updateFeature={this.updateFeature}
           featureHash={this.featureHash}
